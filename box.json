@@ -1,0 +1,63 @@
+{
+    "name":"avif",
+    "version":"1.0.0",
+    "author":"Angry Sam Productions <dave@angrysam.com>",
+    "location":"ForgeboxStorage",
+    "homepage":"https://github.com/homestar9/avif",
+    "documentation":"https://github.com/homestar9/avif",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/homestar9/avif"
+    },
+    "bugs":"https://github.com/homestar9/avif",
+    "shortDescription":"CFML ColdBox module to encode, decode, and inspect AVIF images using bundled libavif binaries. Hot-swap sister module to `webp`.",
+    "slug":"avif",
+    "type":"modules",
+    "keywords":"avif,image,coldbox,libavif,avifenc,avifdec,encode,decode,webp",
+    "license": [
+		{
+            "type":"MIT",
+            "URL":"https://github.com/homestar9/avif/blob/master/LICENSE.md"
+        }
+	],
+    "contributors":[],
+    "dependencies":{},
+    "devDependencies":{
+        "commandbox-cfformat":"*",
+        "commandbox-docbox":"*",
+        "commandbox-dotenv":"*",
+        "commandbox-cfconfig":"*"
+    },
+    "ignore":[
+        "**/.*",
+        "test-harness",
+        "plans",
+        "/server*.json"
+    ],
+    "scripts":{
+        "format":"cfformat run models,test-harness/tests/,ModuleConfig.cfc --overwrite",
+        "format:check":"cfformat check models,test-harness/tests/,ModuleConfig.cfc ./.cfformat.json",
+        "install:dependencies":"install && cd test-harness && install",
+        "test":"testbox run",
+        "start:lucee":"server start serverConfigFile=server-lucee@5.json",
+        "start:lucee6":"server start serverConfigFile=server-lucee@6.json",
+        "start:2023":"server start serverConfigFile=server-adobe@2023.json",
+        "start:boxlang":"server start serverConfigFile=server-boxlang@1.json",
+        "stop:lucee":"server stop serverConfigFile=server-lucee@5.json",
+        "stop:lucee6":"server stop serverConfigFile=server-lucee@6.json",
+        "stop:2023":"server stop serverConfigFile=server-adobe@2023.json",
+        "stop:boxlang":"server stop serverConfigFile=server-boxlang@1.json",
+        "forget:lucee":"server forget serverConfigFile=server-lucee@5.json",
+        "forget:lucee6":"server forget serverConfigFile=server-lucee@6.json",
+        "forget:2023":"server forget serverConfigFile=server-adobe@2023.json",
+        "forget:boxlang":"server forget serverConfigFile=server-boxlang@1.json",
+        "logs:lucee":"server log serverConfigFile=server-lucee@5.json --follow",
+        "logs:lucee6":"server log serverConfigFile=server-lucee@6.json --follow",
+        "logs:2023":"server log serverConfigFile=server-adobe@2023.json --follow",
+        "logs:boxlang":"server log serverConfigFile=server-boxlang@1.json --follow"
+    },
+    "testbox":{
+        "runner":"http://localhost:60300/tests/runner.cfm"
+    },
+    "installPaths":{}
+}

@@ -1,0 +1,51 @@
+# Artifacts and temp folders
+.artifacts/**
+.tmp/**
+.DS_Store
+
+# Engine + Secrets
+.env
+.engine/**
+
+# IDE
+.vscode
+
+# Dependencies
+test-harness/coldbox/**
+test-harness/docbox/**
+test-harness/testbox/**
+test-harness/logs/**
+test-harness/modules/**
+
+# Test output scratch (recreated by the test suite)
+test-harness/tests/resources/output/**
+
+# modules
+modules/**
+
+# log files
+logs/**
+
+# Ignore everything under .agents by default
+.agents/**
+.claude/**
+
+# Keep the root folder and manifest
+!.agents/
+!.agents/manifest.json
+
+# Keep project-authored guidelines
+!.agents/guidelines/
+!.agents/guidelines/custom/
+!.agents/guidelines/custom/**
+!.agents/guidelines/overrides/
+!.agents/guidelines/overrides/**
+
+# Keep project-authored custom skills + overrides
+!.agents/skills-custom/
+!.agents/skills-custom/**
+!.agents/skills/overrides/
+!.agents/skills/overrides/**
+
+# plans
+plans/**

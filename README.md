@@ -1,6 +1,6 @@
 # avif
 
-![AVIF Logo](https://github.com/homestar9/avif/blob/master/avif-logo.avif?raw=true)
+![AVIF Logo](https://github.com/homestar9/avif/blob/main/avif-logo.avif?raw=true)
 
 AVIF is a ColdBox module that provides a simple API for converting images into
 [AVIF](https://en.wikipedia.org/wiki/AVIF) format, decoding AVIF images back into

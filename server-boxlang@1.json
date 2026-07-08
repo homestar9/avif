@@ -1,0 +1,31 @@
+{
+    "name":"avif-boxlang@1",
+    "app":{
+        "serverHomeDirectory":".engine/boxlang1",
+        "cfengine":"boxlang@1"
+    },
+    "fusionreactor":{
+        "enable":false
+    },
+    "web":{
+        "http":{
+            "port":"60300"
+        },
+        "rewrites":{
+            "enable":true
+        },
+        "webroot":"test-harness",
+        "aliases":{
+            "/moduleroot/avif":"../"
+        }
+    },
+    "jvm":{
+        "heapSize":"768",
+        "javaVersion":"openjdk21_jre",
+        "args":"-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8888"
+    },
+    "openBrowser":"false",
+    "scripts":{
+        "onServerInitialInstall":"install bx-compat-cfml,bx-image --noSave"
+    }
+}
