@@ -1,0 +1,9 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Binaries — never normalize line endings
+*.exe  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.avif binary
