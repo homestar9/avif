@@ -388,8 +388,13 @@ component singleton hint="I am the avif encoder/decoder/inspector" {
         var rw = o.keyExists( "resizeWidth" ) ? o.resizeWidth : 0;
         var rh = o.keyExists( "resizeHeight" ) ? o.resizeHeight : 0;
         if ( rw > 0 || rh > 0 ) {
-            // An empty string for a dimension preserves aspect ratio.
-            imageResize( img, ( rw > 0 ? rw : "" ), ( rh > 0 ? rh : "" ) );
+            /* Compute the missing dimension from the source aspect ratio instead of passing "".
+               The ACF/Lucee "empty string preserves aspect ratio" idiom fails on BoxLang:
+               bx-image declares imageResize's width/height as numeric and rejects a string. */
+            var srcInfo = imageInfo( img );
+            if ( rw <= 0 ) { rw = max( 1, round( rh * srcInfo.width / srcInfo.height ) ); }
+            if ( rh <= 0 ) { rh = max( 1, round( rw * srcInfo.height / srcInfo.width ) ); }
+            imageResize( img, rw, rh );
         }
 
         if ( o.keyExists( "flipImage" ) && o.flipImage ) {
